@@ -1,0 +1,215 @@
+##[COMPLETED] DIFF + SYNC + SCRUB Jobs (SnapRAID on arnor)   
+SnapRAID Script Job started [Thu Oct 16 02:00:01 AM EDT 2025] 
+
+---------------------------------------- 
+##Preprocessing 
+###Stop Services [Thu Oct 16 02:00:01 AM EDT 2025] 
+Pausing Service - Nzbget 
+nzbget 
+Pausing Service - Sonarr 
+sonarr 
+Pausing Service - Radarr 
+radarr 
+Pausing Service - Bazarr 
+bazarr 
+Pausing Service - Lidarr 
+lidarr 
+Testing that all parity files are present. 
+All parity files found. Continuing... 
+
+---------------------------------------- 
+##Processing 
+###SnapRAID TOUCH [Thu Oct 16 02:00:01 AM EDT 2025] 
+Checking for zero sub-second files. 
+Found 1 files with zero sub-second timestamp. 
+Running TOUCH job to timestamp. [Thu Oct 16 02:00:09 AM EDT 2025] 
+Loading state from /var/snapraid.content... 
+Setting sub-second timestamps... 
+touch media/movies/The\ Road\ \(2009\)/The\ Road\ \(2009\).mkv 
+Saving state to /var/snapraid.content... 
+Saving state to /mnt/disk1/.snapraid.content... 
+Saving state to /mnt/disk3/.snapraid.content... 
+Saving state to /mnt/disk4/.snapraid.content... 
+Verifying... 
+Verified /var/snapraid.content in 0 seconds 
+Verified /mnt/disk1/.snapraid.content in 0 seconds 
+Verified /mnt/disk4/.snapraid.content in 1 seconds 
+Verified /mnt/disk3/.snapraid.content in 1 seconds 
+Using 1276 MiB of memory for the file-system. 
+TOUCH finished [Thu Oct 16 02:00:36 AM EDT 2025] 
+###SnapRAID DIFF [Thu Oct 16 02:00:36 AM EDT 2025] 
+Loading state from /var/snapraid.content... 
+Comparing... 
+add media/audio/podcasts/A\ Hot\ Dog\ Is\ a\ Sandwich/Pro-Chefs-Rank-Halloween-Candy.mp3 
+add backups/data/8/8886 
+add backups/data/8/8887 
+add backups/data/8/8888 
+add backups/data/8/8889 
+add backups/integrity.8893 
+add media/audio/podcasts/1\ Year\ Daily\ Audio\ Bible/DAB-October-16-2025.m4a 
+add backups/data/8/8890 
+add backups/data/8/8891 
+add backups/data/8/8892 
+add backups/data/8/8893 
+add backups/nonce 
+add backups/hints.8893 
+add backups/index.8893 
+remove backups/nonce 
+remove backups/integrity.8885 
+remove backups/hints.8885 
+remove backups/index.8885 
+
+   52328 equal 
+      14 added 
+       4 removed 
+       0 updated 
+       0 moved 
+       0 copied 
+       0 restored 
+There are differences! 
+
+DIFF finished [Thu Oct 16 02:00:41 AM EDT 2025] 
+
+**SUMMARY of changes - Added [14] - Deleted [4] - Moved [0] - Copied [0] - Updated [0]** 
+
+There are deleted files. The number of deleted files, (4), is below the threshold of (50). SYNC Authorized. 
+There are updated files. The number of updated files, (0), is below the threshold of (500). SYNC Authorized. 
+###SnapRAID SYNC [Thu Oct 16 02:00:41 AM EDT 2025] 
+Self test... 
+Loading state from /var/snapraid.content... 
+Scanning... 
+Scanned d4 in 0 seconds 
+Scanned d5 in 0 seconds 
+Scanned d6 in 0 seconds 
+Scanned d1 in 0 seconds 
+Scanned d2 in 0 seconds 
+Scanned d3 in 0 seconds 
+Using 1281 MiB of memory for the file-system. 
+Initializing... 
+Resizing... 
+Saving state to /var/snapraid.content... 
+Saving state to /mnt/disk1/.snapraid.content... 
+Saving state to /mnt/disk3/.snapraid.content... 
+Saving state to /mnt/disk4/.snapraid.content... 
+Verifying... 
+Verified /mnt/disk4/.snapraid.content in 0 seconds 
+Verified /mnt/disk1/.snapraid.content in 0 seconds 
+Verified /mnt/disk3/.snapraid.content in 0 seconds 
+Verified /var/snapraid.content in 0 seconds 
+Using 128 MiB of memory for 64 cached blocks. 
+Selecting... 
+Syncing... 
+
+       d1  0% |   
+       d2  0% |   
+       d3  0% |   
+       d4  0% |   
+       d5  0% |   
+       d6  0% |   
+   parity 33% | ******************* 
+ 2-parity 69% | **************************************** 
+     raid  2% | * 
+     hash  3% | * 
+    sched  0% |   
+     misc  0% |   
+              |____________________________________________________________ 
+                            wait time (total, less is better) 
+
+SYNC_JOB--Everything OK 
+Saving state to /var/snapraid.content... 
+Saving state to /mnt/disk1/.snapraid.content... 
+Saving state to /mnt/disk3/.snapraid.content... 
+Saving state to /mnt/disk4/.snapraid.content... 
+Verifying... 
+Verified /var/snapraid.content in 0 seconds 
+Verified /mnt/disk1/.snapraid.content in 0 seconds 
+Verified /mnt/disk4/.snapraid.content in 0 seconds 
+Verified /mnt/disk3/.snapraid.content in 0 seconds 
+SYNC finished [Thu Oct 16 02:05:19 AM EDT 2025] 
+
+###SnapRAID SCRUB [Thu Oct 16 02:05:19 AM EDT 2025] 
+Self test... 
+Loading state from /var/snapraid.content... 
+Using 1276 MiB of memory for the file-system. 
+Initializing... 
+Using 160 MiB of memory for 64 cached blocks. 
+Selecting... 
+Scrubbing... 
+
+       d1 11% | ******* 
+       d2  0% |   
+       d3  6% | **** 
+       d4  0% |   
+       d5 13% | ******* 
+       d6 28% | **************** 
+   parity  5% | *** 
+ 2-parity  3% | ** 
+     raid 17% | ********** 
+     hash  9% | ***** 
+    sched  0% |   
+     misc  0% |   
+              |____________________________________________________________ 
+                            wait time (total, less is better) 
+
+SCRUB_JOB--Everything OK 
+Saving state to /var/snapraid.content... 
+Saving state to /mnt/disk1/.snapraid.content... 
+Saving state to /mnt/disk3/.snapraid.content... 
+Saving state to /mnt/disk4/.snapraid.content... 
+Verifying... 
+Verified /var/snapraid.content in 0 seconds 
+Verified /mnt/disk1/.snapraid.content in 0 seconds 
+Verified /mnt/disk4/.snapraid.content in 0 seconds 
+Verified /mnt/disk3/.snapraid.content in 0 seconds 
+SCRUB finished [Thu Oct 16 03:39:03 AM EDT 2025] 
+
+
+---------------------------------------- 
+##Postprocessing 
+
+SnapRAID SMART report: 
+
+   Temp  Power   Error   FP Size 
+      C OnDays   Count        TB  Serial                Device        Disk 
+ ----------------------------------------------------------------------- 
+     36      -       -   4%  4.0  001510EP6AYX          /dev/sdd      d1 
+     34      -       -   5%  4.0  K7H1R35L              /dev/sde      d2 
+     37      -       -   5%  4.0  PEJUYVTX              /dev/sdb      d3 
+     34      -       -   5%  4.0  PEJWNLPX              /dev/sdc      d4 
+     38      -       -   3%  4.0  WMC1F0E1PKYS          /dev/sdh      d5 
+     34      -       -   3%  4.0  WMC1F0F1H16P          /dev/sdg      d6 
+     37      -       -  71%  4.0  001510EMEKTX          /dev/sda      parity 
+     35      -       -   8%  4.0  PBK2HMBX              /dev/sdf      2-parity 
+     33   2004       0  SSD  0.3  EC8407970B0D00047308  /dev/sdj      - 
+      -      -       -    -    -  S3ESNX0J220077M       /dev/nvme0n1  - 
+     36   1147       0  SSD  1.0  50026B7282C58F00      /dev/sdi      - 
+
+The FP column is the estimated probability (in percentage) that the disk 
+is going to fail in the next year. 
+
+Probability that at least one disk is going to fail in the next year is 79%. 
+Spinning down disks... 
+Spindown... 
+Spundown device '/dev/sdc' for disk 'd4' in 129 ms. 
+Spundown device '/dev/sda' for disk 'parity' in 131 ms. 
+Spundown device '/dev/sdf' for disk '2-parity' in 132 ms. 
+Spundown device '/dev/sdd' for disk 'd1' in 181 ms. 
+Spundown device '/dev/sdb' for disk 'd3' in 767 ms. 
+Spundown device '/dev/sde' for disk 'd2' in 928 ms. 
+Spundown device '/dev/sdg' for disk 'd6' in 13104 ms. 
+Spundown device '/dev/sdh' for disk 'd5' in 13258 ms. 
+Unpausing Service - Nzbget 
+nzbget 
+Unpausing Service - Sonarr 
+sonarr 
+Unpausing Service - Radarr 
+radarr 
+Unpausing Service - Bazarr 
+bazarr 
+Unpausing Service - Lidarr 
+lidarr 
+All jobs ended. [Thu Oct 16 03:39:17 AM EDT 2025]   
+Email address is set. Sending email report to **REDACTED@gmail.com** [Thu Oct 16 03:39:17 AM EDT 2025] 
+
+---------------------------------------- 
+##Total time elapsed for SnapRAID: 1hrs 39min 16sec  
